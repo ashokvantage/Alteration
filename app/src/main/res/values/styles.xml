@@ -1,0 +1,111 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="colorPrimary">@color/primary_color</item>
+
+        <item name="colorAccent">@color/accent_color</item>
+
+        <item name="autoCompleteTextViewStyle">@style/CustomAutoCompleteStyle</item>
+
+    </style>
+
+    <style name="SdkTheme" parent="@style/BaseTheme" />
+
+
+    <style name="PaymentOptionButton">
+
+        <item name="android:clickable">false</item>
+
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:textColor">@android:color/black</item>
+
+        <item name="android:paddingTop">@dimen/margin_10</item>
+
+        <item name="android:paddingBottom">@dimen/margin_10</item>
+
+        <item name="android:padding">@dimen/margin_16</item>
+
+    </style>
+
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+
+    <style name="CustomAutoCompleteStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+
+        <item name="android:textCursorDrawable">@drawable/cursor_instamojo</item>
+
+    </style>
+
+
+    <style name="SelectableItemTheme">
+
+        <item name="colorControlHighlight">@color/separator_color</item>
+
+    </style>
+
+
+    <style name="SelectableItemBackground">
+
+        <item name="android:theme">@style/SelectableItemTheme</item>
+
+        <item name="android:background">?attr/selectableItemBackground</item>
+
+    </style>
+
+    <style name="CustomProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/custom_progress_bar_horizontal</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+
+    <style name="TemperatureTextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/temperature_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="PlaceTextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ClockTextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="DescriptionTextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+</resources>

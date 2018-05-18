@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#49c8ae</color>
+    <color name="colorPrimaryDark">#40c5aa</color>
+    <color name="colorAccent">#40c5aa</color>
+    <color name="colorGrey">@color/separator_color</color>
+    <color name="separator_line">#dfdfdf</color>
+    <color name="blue">#2591ff</color>
+    <color name="bright_foreground_light_disabled">#80000000</color>
+    <color name="toolbar_title_color">#4A4A4A</color>
+
+    <color name="section_title_color">#6A6A6A</color>
+    <color name="product_title_color">#333333</color>
+
+    <!--<color name="sub_title_color">#9B9B9B</color>-->
+    <color name="graycolor">#dfe0e1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="shadow">#46566A65</color>
+    <color name="black">#ff000000</color>
+    <color name="primary_color">#1B75BB</color>
+
+    <color name="primary_color_dark">#757575</color>
+
+    <color name="background">@android:color/white</color>
+
+    <color name="accent_color">@android:color/black</color>
+
+    <color name="separator_color">#E9E9E9</color>
+
+    <color name="edit_text_color">#61000000</color>
+
+    <color name="base_dark">#717D8B</color>
+    <color name="red">#f20c1b</color>
+  <!-- today 10 jan 18-->
+
+    <color name="titles_color">#5c5c5c</color>
+    <color name="sub_titles_colors">#898989</color>
+    <color name="line_color">#dedddd</color>
+    <color name="product_name_color">#5c5c5c</color>
+    <color name="product_sub_name_color">#9b9b9b</color>
+    <color name="product_price_color">#9b9b9b</color>
+    <color name="seperater">#f6f7f9</color>
+
+
+    <color name="temperature_background">@color/blue</color>
+    <color name="temperature_text">@android:color/white</color>
+
+    <color name="green_dot_big">@color/blue</color>
+    <color name="green_dot_small">@color/blue</color>
+
+    <color name="grayIconTint">#727272</color>
+</resources>

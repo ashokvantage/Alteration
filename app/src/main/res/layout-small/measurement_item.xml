@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!--
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/avatar" />
+    -->
+    <TextView
+        android:id="@+id/txtname"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/badge_circle"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:text="wr..."
+        android:fontFamily="@font/fontstyle"
+        android:textSize="15sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxEms="3"
+        android:singleLine="true"
+        android:text="Mom"
+        android:fontFamily="@font/fontstyle"
+        android:textSize="15sp"
+        android:textColor="@color/product_sub_name_color"/>
+
+</LinearLayout>

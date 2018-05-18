@@ -1,0 +1,180 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+//apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'sdks'
+
+    publishedGroupId = 'com.instamojo'
+    libraryName = 'Android SDK'
+    artifact = 'android-sdk'
+
+    libraryDescription = 'Instamojo Payments Android SDK'
+
+    siteUrl = 'https://github.com/Instamojo/android-sdk'
+    gitUrl = 'https://github.com/Instamojo/android-sdk.git'
+
+    libraryVersion = '1.2.6'
+
+    developerId = 'vedhavyas'
+    developerName = 'Vedhavyas Singareddi'
+    developerEmail = 'vedhavyas@instamojo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.fabric.io/public'
+
+    }
+    maven {
+        url "https://s3-ap-southeast-1.amazonaws.com/godel-release/godel/"
+    }
+    maven {
+        url "https://maven.google.com"
+    }
+    google()
+}
+
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.tdevelopers.alteration"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 5
+        versionName "1.4"
+        vectorDrawables.useSupportLibrary = true
+        consumerProguardFiles 'proguard-rules.pro'
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude '.readme'
+        exclude '/lib/mips64/**'
+        exclude '/lib/arm64-v8a/**'
+        exclude '/lib/x86_64/**'
+    }
+    lintOptions {
+        abortOnError true
+        ignoreWarnings false
+        textReport true
+        textOutput 'stdout'
+        disable("InvalidPackage", "MissingPrefix", "UnusedAttribute", "UnknownIdInLayout", "InconsistentLayout",
+                "IconMissingDensityFolder", "Overdraw", "IconDensities", "GradleDependency")
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    productFlavors {
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main { res.srcDirs = ['src/main/res', 'src/main/res/layout-sw600dp', 'src/main/res/anim'] }
+    }
+}
+android { sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/layout-sw600dp'] } } }
+android {
+    useLibrary 'org.apache.http.legacy'
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':paper-onboarding')
+    compile project(':library')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true
+    }
+    compile('org.apache.httpcomponents:httpmime:4.3.6') {
+        exclude module: 'httpclient'
+    }
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
+
+//    compile 'com.github.mukeshsolanki:android-otpview-pinview:1.0.3'
+    /* compile 'com.instamojo:android-sdk:+'*/
+//    compile 'com.ingstamojo:android-sdk:1.2.6'
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //noinspection GradleCompatible
+//    compile 'com.android.support:cardview-v7:26.0.0'
+    //noinspection GradleCompatible
+//    compile 'com.android.support:recyclerview-v7:26.0.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.android.support:multidex:1.0.0'
+//    compile 'com.android.support:appcompat-v7:26.0.0'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    compile 'com.android.support:design:26.0.0'
+    //noinspection GradleCompatible
+    compile 'com.android.support:support-v4:26.0.1'
+    compile 'com.google.firebase:firebase-crash:9.4.0'
+    compile 'com.google.firebase:firebase-core:9.4.0'
+    compile 'com.afollestad.material-dialogs:core:0.9.2.3'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'in.juspay:godel:0.6.23.1423'
+    compile 'com.google.android.gms:play-services:9.4.0'
+
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+//    compile 'com.github.bumptech.glide:glide:4.2.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.yarolegovich:mp:1.0.9'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+//    implementation 'com.github.bumptech.glide:glide:4.0.0'
+
+
+    testCompile 'junit:junit:4.12'
+}
+repositories {
+    maven {
+        url 'https://maven.google.com'
+        // Alternative URL is 'https://dl.google.com/dl/android/maven2/'
+    }
+}
+/*if (project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+}*/
+android { sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/layout-sw600dp'] } } }
+android { sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/layout-small'] } } }
+apply plugin: 'com.google.gms.google-services'
