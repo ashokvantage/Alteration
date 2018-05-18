@@ -1,6 +1,8 @@
 package com.tdevelopers.alteration.myaccount;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -18,7 +20,10 @@ import android.widget.Toast;
 
 import com.tdevelopers.alteration.Helper;
 import com.tdevelopers.alteration.NewLogin.NewLoginActivity;
+import com.tdevelopers.alteration.NewLogin.SplashScreen;
 import com.tdevelopers.alteration.R;
+import com.tdevelopers.alteration.home.HomeActivity;
+import com.tdevelopers.alteration.home.UploadPhotosActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,16 +48,33 @@ public class ContactUs extends AppCompatActivity {
         txtcall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    if (result) {
-                        String dial = "tel:" + "9949521197";
-                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
-                    } else {
-                        Toast.makeText(ContactUs.this, "Permission Call Phone denied", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (SecurityException e) {
 
-                }
+                AlertDialog.Builder builder = new AlertDialog.Builder(ContactUs.this);
+                builder.setMessage("Call Support Number ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                try {
+                                    result = checkAndRequestPermissions();
+                                    if (result) {
+                                        String dial = "tel:" + "9949521197";
+                                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+                                    } else {
+                                        Toast.makeText(ContactUs.this, "Permission Call Phone denied", Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (SecurityException e) {
+
+                                }
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
@@ -82,9 +104,9 @@ public class ContactUs extends AppCompatActivity {
                             info.activityInfo.name.toLowerCase().contains("gmail")) best = info;
                 if (best != null)
                     intent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"srivatsamudumby@gmail.com"});
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Alteration Testing email");
-                intent.putExtra(Intent.EXTRA_TEXT, "email working");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"nireeshreddy@gmail.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Alterations Support   {" + Helper.getLocalValue(ContactUs.this, "username") + "," + Helper.getLocalValue(ContactUs.this, "userphone") + "}");
+                intent.putExtra(Intent.EXTRA_TEXT, "");
                 startActivity(intent);
             }
         });

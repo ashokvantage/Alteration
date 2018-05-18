@@ -135,6 +135,7 @@ public class NewLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (MyApp.getInstance().isConnectingToInternet()) {
+                    txttimer.setVisibility(View.GONE);
                     sendOTP();
                 } else {
                     Toast.makeText(NewLoginActivity.this, "No internet connection available.", Toast.LENGTH_LONG).show();
@@ -457,12 +458,13 @@ public class NewLoginActivity extends AppCompatActivity {
                                         resendOTP.setAlpha(1f);
                                         resendOTP.setEnabled(true);
                                         text.setText("Please enter otp verification code sent to " + mobileInput.getText().toString());
-                                        txttimer.setText("Time remaining :" + String.valueOf(counter) + " seconds");
+                                        txttimer.setText("00:"+String.valueOf(counter) + "s");
                                         counter = 45;
+                                        txttimer.setVisibility(View.VISIBLE);
                                         new CountDownTimer(45000, 1000) {
                                             public void onTick(long millisUntilFinished) {
                                                 counter--;
-                                                txttimer.setText("Time remaining :" + String.valueOf(counter) + " seconds");
+                                                txttimer.setText("00:"+String.valueOf(counter) + "s");
                                             }
 
                                             public void onFinish() {

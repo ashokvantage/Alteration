@@ -105,7 +105,7 @@
             android:background="@drawable/buttobborder"
             android:fontFamily="@font/fontstyle"
             android:gravity="center"
-            android:padding="17dp"
+            android:padding="12dp"
             android:text="Add New Address"
             android:textColor="@color/sub_titles_colors"
             android:textSize="@dimen/title"

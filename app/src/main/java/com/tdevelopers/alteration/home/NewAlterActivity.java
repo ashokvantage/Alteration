@@ -1044,6 +1044,7 @@ public class NewAlterActivity extends AppCompatActivity {
             uploadpictureBootomSheet.setState(BottomSheetBehavior.STATE_COLLAPSED);
         } else {
             super.onBackPressed();
+            overridePendingTransition(R.anim.slide_in_bottom, R.anim.stay);
         }
 
     }

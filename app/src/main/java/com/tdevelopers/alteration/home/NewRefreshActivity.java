@@ -867,6 +867,7 @@ boolean large_device=false;
             uploadpictureBootomSheet.setState(BottomSheetBehavior.STATE_COLLAPSED);
         } else {
             super.onBackPressed();
+            overridePendingTransition(R.anim.slide_in_bottom, R.anim.stay);
         }
 
     }

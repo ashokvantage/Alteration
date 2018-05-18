@@ -155,12 +155,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
         switch (v.getId()) {
             case R.id.banner1:
+
                 intent = new Intent(HomeActivity.this, NewAlterActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_top, R.anim.stay);
                 break;
             case R.id.banner2:
+
                 intent = new Intent(HomeActivity.this, NewRefreshActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_top, R.anim.stay);
                 break;
 
             case R.id.banner3:

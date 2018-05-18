@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:background="@mipmap/veripic" />
+        android:background="@drawable/ic_success_icon" />
 
     <TextView
         android:id="@+id/txtnumber"
@@ -21,6 +21,7 @@
         android:layout_below="@+id/img"
         android:layout_centerHorizontal="true"
         android:text="  "
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/fontstyle"
         android:textColor="@color/titles_color"
         android:textSize="18sp" />

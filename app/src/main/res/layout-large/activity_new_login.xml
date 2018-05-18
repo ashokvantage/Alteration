@@ -113,6 +113,19 @@
                     android:text="Resend OTP"
                     android:textColor="@color/blue"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/texttimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/resend"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fontstyle"
+                    android:text="00:45s"
+                    android:textColor="@color/sub_titles_colors"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
 
 
                 <TextView
@@ -125,15 +138,6 @@
                     android:textColor="@color/sub_titles_colors"
                     android:textSize="17sp" />
 
-                <TextView
-                    android:id="@+id/texttimer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/text"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/fontstyle"
-                    android:textColor="@color/sub_titles_colors"
-                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

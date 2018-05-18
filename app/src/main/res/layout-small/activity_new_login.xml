@@ -114,6 +114,19 @@
                     android:textColor="@color/blue"
                     android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/texttimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/resend"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fontstyle"
+                    android:text="00:45s"
+                    android:textColor="@color/sub_titles_colors"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/text"
@@ -124,15 +137,6 @@
                     android:fontFamily="@font/fontstyle"
                     android:textColor="@color/sub_titles_colors"
                     android:textSize="15sp" />
-                <TextView
-                    android:id="@+id/texttimer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/text"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/fontstyle"
-                    android:textColor="@color/sub_titles_colors"
-                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -155,10 +159,10 @@
                             android:layout_height="48dp"
                             android:layout_marginRight="16dp"
                             android:gravity="center"
+                            android:inputType="number"
                             android:maxLength="1"
                             android:textColor="@color/titles_color"
-                            android:textSize="21sp"
-                            android:inputType="number"/>
+                            android:textSize="21sp" />
 
                         <EditText
                             android:id="@+id/otp_two_edit_text"
@@ -166,10 +170,10 @@
                             android:layout_height="48dp"
                             android:layout_marginRight="16dp"
                             android:gravity="center"
+                            android:inputType="number"
                             android:maxLength="1"
                             android:textColor="@color/titles_color"
-                            android:textSize="21sp"
-                            android:inputType="number"/>
+                            android:textSize="21sp" />
 
                         <EditText
                             android:id="@+id/otp_three_edit_text"
@@ -177,20 +181,20 @@
                             android:layout_height="48dp"
                             android:layout_marginRight="16dp"
                             android:gravity="center"
+                            android:inputType="number"
                             android:maxLength="1"
                             android:textColor="@color/titles_color"
-                            android:textSize="21sp"
-                            android:inputType="number"/>
+                            android:textSize="21sp" />
 
                         <EditText
                             android:id="@+id/otp_four_edit_text"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:gravity="center"
+                            android:inputType="number"
                             android:maxLength="1"
                             android:textColor="@color/titles_color"
-                            android:textSize="21sp"
-                            android:inputType="number"/>
+                            android:textSize="21sp" />
                     </LinearLayout>
 
                     <View
@@ -234,8 +238,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="35dp"
-                                app:srcCompat="@drawable/ic_right_arrowss"
-                                />
+                                app:srcCompat="@drawable/ic_right_arrowss" />
 
                         </RelativeLayout>
                     </RelativeLayout>

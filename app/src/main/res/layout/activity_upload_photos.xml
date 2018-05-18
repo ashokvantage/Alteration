@@ -55,8 +55,8 @@
             android:id="@+id/rl_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:layout_below="@+id/view"
+            android:layout_margin="20dp"
             android:background="@drawable/primary_color_border">
 
             <LinearLayout

@@ -2,6 +2,7 @@ package com.tdevelopers.alteration.home;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,8 +35,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,6 +83,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -106,7 +113,6 @@ public class UploadPhotosActivity extends AppCompatActivity {
     TextView txttype;
     AppCompatDialog progressDialog;
     Vibrator vibe;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -662,12 +668,16 @@ public class UploadPhotosActivity extends AppCompatActivity {
 //            vibe.vibrate(250);
             vibe.vibrate(250);
             Source_file_List.clear();
+            Intent in=new Intent(UploadPhotosActivity.this,Success_add_toCart.class);
+            startActivity(in);
+            overridePendingTransition(R.anim.slide_in_top, R.anim.stay);
             UploadPhotosActivity.this.finish();
+
             HomeActivity.checkout_page = true;
 //            cur_alt_holder.quantity.setText(cur_image.quantitiy + "");
 //            updateScreen(alters);
-            super.onPreExecute();
 
+            super.onPreExecute();
         }
     }
 
